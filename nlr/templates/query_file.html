@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Query the uploaded file</h1>
+<p>Uploaded file: {{ user_data.uploaded_file.name }}</p>
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="query">Enter your query:</label>
+    <input type="text" name="query" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Query</button>
+</form>
+{% endblock %}
